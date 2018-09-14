@@ -35,6 +35,7 @@ const isNum = (num) => {
 
 const isCapitalized = (string) => {
   // Solution code here...
+  return string.match(/[A-Z]\s/g);
 };
 
 // ------------------------------------------------------------------------------------------------
