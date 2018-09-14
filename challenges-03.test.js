@@ -124,13 +124,15 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let yummyTreats = 0;
   arr.forEach (location => {
     location.items.forEach (item => {
       if (item.name === 'Treats') {
-        return item.quantity;
+        yummyTreats = item.quantity;
       }
     })
   })
+  return yummyTreats;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -153,6 +155,13 @@ const howManyTreats = (arr) => {
 
 const battleship = (board, row, col) => {
   //  Solution code here...
+  let xpos = col;
+  let ypos = board[row];
+  if (ypos[xpos] === '#') {
+    return 'hit';
+  } else {
+    return 'miss';
+  }
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -167,6 +176,20 @@ const battleship = (board, row, col) => {
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  let lowProduct = 1;
+  let topProduct = 1;
+  numbers.forEach (subLevel => {
+    subLevel.forEach (argument => {
+      lowProduct = argument;
+      subLevel.forEach (multiplier => {
+        if (argument != multiplier) {
+          lowProduct = lowProduct*multiplier;
+        }
+      })
+    })
+    topProduct = topProduct * lowProduct;
+  })
+  return topProduct;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -188,6 +211,15 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  let totalDegrees = 0;
+  let totalDays = 0;
+  weather.forEach(week => {
+    week.forEach(day => {
+      totalDegrees += day;
+      totalDays++;
+    })
+  })
+  return totalDegrees / totalDays;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -210,6 +242,27 @@ let lowestWeeklyTemperatureData = [
 
 const lowestWeeklyAverage = (weather) => {
   // Solution code here...
+  let weekAvg = [];
+  let lowestAvg = 0;
+  let totalDegrees = 0;
+  let totalDays = 0;
+  weather.forEach (week => {
+    week.forEach (day =>{
+      totalDegrees += day;
+      totalDays++; 
+    })
+    weekAvg.push(totalDegrees/totalDays);
+    totalDegrees = 0;
+    totalDays = 0;
+    })
+  weekAvg.forEach (entry => {
+    if (entry === weekAvg[0]) {
+      lowestAvg = entry;
+    } else if (entry < lowestAvg) {
+      lowestAvg = entry;
+    }
+  })
+  return lowestAvg;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -238,7 +291,7 @@ const lowestWeeklyAverage = (weather) => {
 // ------------------------------------------------------------------------------------------------
 
 const excel = (str) => {
-  // Solution code here...
+  // Solution code here... 
 }
 
 
