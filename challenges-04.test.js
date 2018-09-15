@@ -47,6 +47,12 @@ const isCapitalized = (string) => {
 
 const citiesAtoJ = (cities) => {
   // Solution code here...
+  let cityString = '';
+  cities.forEach(city=>{
+    if (city.search(/[A-J]/) === 0)
+    cityString+=` ${city}`; 
+  })
+  return cityString.match(/[A-J]\w+/g);
 };
 
 // ------------------------------------------------------------------------------------------------
