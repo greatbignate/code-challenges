@@ -96,6 +96,7 @@ const matchMonth = (input) => {
 
 const noPunctuation = input => {
   // Solution code here...
+  return input.match(/[a-zA-Z]\w\w+\s+/g);
 };
 
 // ------------------------------------------------------------------------------------------------
