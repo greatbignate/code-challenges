@@ -16,21 +16,9 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  let letters = str.match(/./g);
-  letters.push('');
-  console.log(letters);
-  str.match(/./g).forEach(instance =>{
-    let word = '';
-    letters.forEach(letter => {
-      word += letter;
-    })
-    letters.splice(instance,1);
-    result.push(word);
-    // if (letters.length === 0) {
-    //   word = '';
-    //   result.push(word);
-    // }
-  })
+  for (let i=0; i<= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -60,6 +48,9 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 const totalSumCSV = (str) => {
   let total = 0;
   // Solution code here...
+  str.match(/\d+/g).forEach(character => {
+    total+=Number(character);
+  })
   return total;
 };
 
@@ -107,6 +98,18 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  gruffaloCrumble.ingredients.forEach(entry =>{
+    let words = entry.match(/\S+/g).slice(2);
+    let itemName = '';
+    words.forEach(word =>{
+      if (itemName === '') {
+        itemName = word;
+      } else {
+        itemName = itemName+' '+word;
+      }
+    })
+    result.push(itemName);
+  })
   return result;
 }
 

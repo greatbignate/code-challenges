@@ -70,7 +70,6 @@ const citiesAtoJ = (cities) => {
 const matchMonth = (input) => {
   // Solution code here...
   if (typeof input !== 'string') {
-    console.log (input+ ' 1st');
     return false;
   } else if (input.search(/[O|o][c][t]/g) === 0 && input.match(/./g).length === 3) {
     return true;
