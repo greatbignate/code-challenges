@@ -71,34 +71,6 @@ let characters = [
 
 const totalCharacters = (arr) => {
   // Solution code here...
-
-  // let nameList = [];
-  // let nameScrubber = function (firstName, lastName) {
-  //   nameList.forEach(person => {
-  //     if (typeof firstName !== 'string' || typeof lastName !== 'string') {
-  //       return true;
-  //     }else if (person === `${firstName} ${lastName}`) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   })
-  // }
-  // arr.forEach(family => {
-  //   if (nameScrubber(family.name, family.house) === false) {
-  //     nameList.push(family.name+ ' ' +family.house);
-  //   }
-  //   if (nameScrubber(family.spouse, family.house) === false) {
-  //     nameList.push(family.spouse+ ' ' +family.house);
-  //   }
-  //   family.children.forEach(child => {
-  //     if (nameScrubber(child, family.house) === false) {
-  //       nameList.push(child+ ' ' +family.house);
-  //     }
-  //   })
-  // })
-  // console.log(nameList);
-
   let counter = 0;
   arr.forEach(character =>{
     counter+=1;
@@ -182,6 +154,16 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  arr.forEach(family => {
+    let peeps = 0;
+    if (typeof family.spouse === 'string') {
+      peeps = 2+family.children.length;
+    } else {
+      peeps = 1+family.children.length;
+    }
+    sizes.push({house: family.house, members: peeps});
+    console.log(sizes);
+  })
   return sizes;
 }
 
