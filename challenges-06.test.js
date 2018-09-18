@@ -162,7 +162,6 @@ const houseSize = (arr) => {
       peeps = 1+family.children.length;
     }
     sizes.push({house: family.house, members: peeps});
-    console.log(sizes);
   })
   return sizes;
 }
@@ -188,6 +187,20 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 const houseSurvivors = (arr) => {
   const survivors = [];
   // Solution code here...
+  arr.forEach(family => {
+    let peeps = 0;
+    if (typeof family.spouse === 'string') {
+      peeps = 2+family.children.length;
+    } else {
+      peeps = 1+family.children.length;
+    }
+    for (let i=0; i<deceasedSpouses.length; i++) {
+      if (family.spouse === deceasedSpouses[i]){
+        peeps --;
+      }
+    }
+    survivors.push({house: family.house, members: peeps});
+  })  
   return survivors;
 }
 
