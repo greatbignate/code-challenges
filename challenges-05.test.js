@@ -145,6 +145,9 @@ Use the split method for this function.
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  gruffaloCrumble.steps.forEach(step =>{
+    result.push(step.split(' ').splice(0,1).join());
+  })
   return result;
 }
 
