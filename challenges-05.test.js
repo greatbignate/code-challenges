@@ -124,6 +124,9 @@ You may also use other array/string functions.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  gruffaloCrumble.ingredients.forEach(entry =>{
+    result.push(entry.split(' ').splice(2,entry.split(' ').length).join(' '));
+  })
   return result;
 }
 
