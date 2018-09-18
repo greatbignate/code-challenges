@@ -166,6 +166,13 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  for (let i=0; i<arr.length; i++){
+    if (arr[i]/2 === parseInt(arr[i]/2)) {
+      arr.splice(i,1);
+      i--;
+    }
+  }
+  return arr;
 };
 
 /*------------------------------------------------------------------------
