@@ -191,6 +191,17 @@ For example: removeLastCharacters('Gregor', 2) returns 'Greg'.
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  let popper = str.split('');
+  if (numberOfCharacters<0){
+    return str;
+  } else if (numberOfCharacters>str.split('').length){
+    return '';
+  } else {
+    for (let i=0; i<numberOfCharacters; i++){
+      popper.pop();
+    }
+    return popper.join('');
+  }
 };
 
 /*------------------------------------------------------------------------
@@ -203,6 +214,13 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
   // Solution code here...
+  let result = [];
+  str.split('').forEach(letter=>{
+    if (letter.search(/[AaEeIiOoUu]/) === -1) {
+      result.push(letter);
+    }
+  })
+  return result.join('');
 };
 
 /*------------------------------------------------------------------------
