@@ -158,6 +158,15 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  for (let i=0; i<arr.length; i++){
+    if (character === arr[i].name) {
+      if (arr[i].children.length > 0) {
+      return true;
+      }
+    } else {
+      return false;
+    }
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------
