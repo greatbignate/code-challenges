@@ -71,6 +71,39 @@ let characters = [
 
 const totalCharacters = (arr) => {
   // Solution code here...
+
+  // let nameList = [];
+  // let nameScrubber = function (firstName, lastName) {
+  //   nameList.forEach(person => {
+  //     if (typeof firstName !== 'string' || typeof lastName !== 'string') {
+  //       return true;
+  //     }else if (person === `${firstName} ${lastName}`) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   })
+  // }
+  // arr.forEach(family => {
+  //   if (nameScrubber(family.name, family.house) === false) {
+  //     nameList.push(family.name+ ' ' +family.house);
+  //   }
+  //   if (nameScrubber(family.spouse, family.house) === false) {
+  //     nameList.push(family.spouse+ ' ' +family.house);
+  //   }
+  //   family.children.forEach(child => {
+  //     if (nameScrubber(child, family.house) === false) {
+  //       nameList.push(child+ ' ' +family.house);
+  //     }
+  //   })
+  // })
+  // console.log(nameList);
+
+  let counter = 0;
+  arr.forEach(character =>{
+    counter+=1;
+  })
+  return counter;
 }
 
 /*------------------------------------------------------------------------------------------------
@@ -82,6 +115,9 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach(character => {
+    houses.push(character.house);
+  })
   return houses;
 }
 
