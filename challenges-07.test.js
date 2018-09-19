@@ -17,7 +17,6 @@ const forLoopTwoToThe = (input) => {
     result.push(2**input[i]);
   }
   return result;
-  // return input.map(instance => 2**instance);
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -43,6 +42,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (input) => {
   // Solution code here...
+  return input.map(instance => 2**instance);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +57,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (input) => {
   // Solution code here...
+  return input.map(letter => letter.charCodeAt());
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -71,6 +72,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (input) => {
   // Solution code here...
+  return input.map(entry => (typeof entry) !== 'number' ? 'N/A' : entry/2 === parseInt(entry/2) ? 'even' : entry/2 !== parseInt (entry/2) ? 'odd' : 'N/A')
 };
 
 /*------------------------------------------------------------------------------------------------
