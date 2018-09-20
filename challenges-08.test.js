@@ -26,6 +26,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (input) => {
   // Solution code here...
+  return input.filter(word => word.search(/[AaEeIiOoUu]/) !== -1);
 };
 
 
@@ -39,6 +40,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, input) => {
   // Solution code here...
+  return input.filter(i => i!== forbiddenValues.filter(n => n === i)[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +84,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (input, minBaseStat) => {
   // Solution code here...
+  return input.filter(ability => ability.baseStat > minBaseStat);
 };
 
 /*------------------------------------------------------------------------------------------------
