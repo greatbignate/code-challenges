@@ -97,6 +97,7 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (input, minBaseStat) => {
   // Solution code here...
+  return (input.filter(ability => ability.baseStat > minBaseStat)).map(instance => instance.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,6 +151,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (input) => {
   // Solution code here...
+  return input.filter(family => family.children === undefined);
 };
 
 /* ------------------------------------------------------------------------------------------------
