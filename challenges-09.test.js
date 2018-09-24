@@ -61,16 +61,11 @@ const characters = [
     house: 'Snow',
   },
 ];
-
+ 
 const countNumberOfChildren = (input) => {
   // Solution code here...
-  console.log(input.filter(family=> family.children));
-  input.filter(family=> family.children)
-  input.reduce((acc, val) => {
-    console.log(acc);
-    return acc += val.children.length}, 0);
-  // input.reduce((acc, val) => {(val.children.length !== undefined ? return acc+= val.children.length : return acc)},0);
-};
+  return input.filter(family => family.children).reduce((acc, cur, idx, arr)=>{return acc+arr[idx].children.length},0);
+  };
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -113,7 +108,7 @@ const snorlaxData = {
 
 const extractStat = (statName, input) => {
   // Solution code here...
-  return input.reduce((acc, val, idx, arr) => {val.stat.name === statName ? acc = val : acc = null},{});
+  return input.reduce((acc, val, idx, arr) => {return val.stat.name === statName ? val : null},{});
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -124,6 +119,7 @@ Write a function that, given an array of numbers as input, uses ONE call to filt
 
 const calculateAverage = (input) => {
   // Solution code here...
+  return (input.reduce((acc, val) => acc+val, 0))/input.length;
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -138,6 +134,7 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = input => {
   // Solution code here...
+
 };
 
 /*------------------------------------------------------------------------------------------------
