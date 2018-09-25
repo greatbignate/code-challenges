@@ -48,7 +48,7 @@ const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
   let result = [];
   input.forEach(subArr => {
-      result.push(subArr.filter(numFirst => numFirst/5 === parseInt(numFirst/5)).map(numSecond => 2**numSecond));
+      result.push(subArr.filter(numFirst => typeof numFirst === 'number' && numFirst/5 === parseInt(numFirst/5)).map(numSecond => 2**numSecond));
   })
   return result;
 };
@@ -117,6 +117,11 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  let names = [];
+  data.filter(char => char.gender === 'male' || char.gender === 'female').forEach(hero => {
+    names.push(hero.name);
+  })
+  return names.join(' and ');
 }
 
 /*------------------------------------------------------------------------------------------------
