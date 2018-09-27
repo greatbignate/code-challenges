@@ -8,6 +8,9 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 
 const sortBackwards = (nums) => {
   // Solution code here...
+nums.sort((a,b) => {
+  return b-a;
+})
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -134,17 +137,21 @@ const meetings = [
 const sortMeetingsByDay = (meetings) => {
   // Solution code here...
   
-  let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  for (let i=0; i<days.length; i++){
-  meetings.forEach(meet => {
-      if (meet.dayofWeek === days[i]) {
-        meetings.push(meet);
-        meetings.shift();
-        i--;        
-      }
-    })
-  }
-  return meetings;
+  // let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  // let n = meetings.length;
+  // for (let i=0; i<days.length; i++){
+  // meetings.forEach(meet => {
+  //   if (meet.dayOfWeek === days[i] && n<20) {
+  //       meetings.push(meet);
+  //       // meetings.splice(meet, 1);
+  //       // i--;
+  //       // n++        
+  //     }
+  //   })
+  // }
+
+  // console.log(meetings)
+  // return meetings;
 };
 
 /*------------------------------------------------------------------------------------------------
