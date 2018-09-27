@@ -67,7 +67,7 @@ const onlyOddChars = (str) => {
       odds.push(stringThing[i]);         
     }
   }
-  return odds;
+  return odds.join('');
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -91,6 +91,7 @@ const allHappy = (strs) => {
 
 const findAnything = (strs, target) => {
   // Solution code here...
+  return strs.filter(string => string.includes(target));
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -102,6 +103,7 @@ const findAnything = (strs, target) => {
 
 const allAnything = (strs, target) => {
   // Solution code here...
+  return strs.every(string => string.includes(target));
 };
 
 // ------------------------------------------------------------------------------------------------
