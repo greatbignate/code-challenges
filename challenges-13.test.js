@@ -40,6 +40,11 @@ const findHappiness = (strs) => {
 
 const standardizePhoneNumbers = (phoneNumbers) => {
   // Solution code here...
+  let nums = [];
+  phoneNumbers.forEach(number => {
+    nums.push(number.substring(1,4)+number.substring(6,9)+number.substring(10,15));
+  })
+  return nums;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -52,6 +57,11 @@ const standardizePhoneNumbers = (phoneNumbers) => {
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let oddStr = '';
+  for (let i = 1; i<str.length; i+2){
+    oddStr = oddStr+str[i];
+  }
+  return oddStr;
 };
 
 // ------------------------------------------------------------------------------------------------
