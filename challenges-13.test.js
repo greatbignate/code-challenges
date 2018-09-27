@@ -57,11 +57,17 @@ const standardizePhoneNumbers = (phoneNumbers) => {
 
 const onlyOddChars = (str) => {
   // Solution code here...
-  let oddStr = '';
-  for (let i = 1; i<str.length; i+2){
-    oddStr = oddStr+str[i];
+  let stringThing = str.match(/./g);
+  console.log(stringThing);
+  let odds = [];
+  for (let i = 0; i < stringThing; i++) {
+    if (str[0] === '') {
+      odds = str[0];
+    } else if (parseInt(i/2) !== i/2) {
+      odds.push(stringThing[i]);         
+    }
   }
-  return oddStr;
+  return odds;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -73,6 +79,7 @@ const onlyOddChars = (str) => {
 
 const allHappy = (strs) => {
   // Solution code here...
+  return strs.every(string => string.includes(':)'));
 };
 
 // ------------------------------------------------------------------------------------------------
